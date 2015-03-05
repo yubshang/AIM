@@ -1,2 +1,0 @@
-# AIM
-ABET Information Manager
