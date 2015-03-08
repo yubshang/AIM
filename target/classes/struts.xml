@@ -25,4 +25,12 @@
 			<!-- <result name="modiMember">/modiMember.jsp</result> -->
 		</action>
 	</package>
+	
+	<package name="json" extends="json-default">
+		<action name="json_degree_*" class="degreeAction" method="{1}">
+			<result type="json">
+    			<param name="root">degreeList</param>
+			</result>
+		</action>
+	</package>
 </struts>

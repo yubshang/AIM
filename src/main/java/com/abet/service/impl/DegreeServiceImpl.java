@@ -1,14 +1,12 @@
 package com.abet.service.impl;
 
 import java.util.List;
-
+import net.sf.json.JSONArray;
 import com.abet.DAO.BaseDAO;
-// import com.abet.DAO.DegreeDAOImpl;
 import com.abet.ORM.Degree;
 import com.abet.service.DegreeService;
 
 public class DegreeServiceImpl implements DegreeService{
-
 	private BaseDAO dao;
 
 	public void saveOrUpdateDegree(Degree degree) {
@@ -21,6 +19,9 @@ public class DegreeServiceImpl implements DegreeService{
 		return degrees;
 	}
 
+	public JSONArray allDegreeJ(){
+		return JSONArray.fromObject(this.allDegree());
+	}
 	public void delDegree(Integer id) {
 		// TODO Auto-generated method stub
 		

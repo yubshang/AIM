@@ -25,14 +25,14 @@ function hideValidateMessage(input){
 </script>
 </head>
 <body>
-<h3 class="title"><s:text name="label.adddegree"/></h3>
+<h3 class="title_abet"><s:text name="label.adddegree"/></h3>
 <s:form cssClass="form-horizontal" action="degree_addDegree" method="post">		
 	<div class="control-group">
 		<label class="control-label" for="inputId"><s:text name="label.identifier"/></label>
 		<div class="controls">
       		<s:textfield id="inputId" name="identifier"/>
       		<span>*</span>  
-      		<span class="error">
+      		<span class="error_abet">
       			<s:if test="fieldErrors != null && fieldErrors.get('identifier') != null && fieldErrors.get('identifier').size() > 0">
      				<s:property value="fieldErrors.get('identifier').get(0)"/>
      			</s:if>
@@ -44,7 +44,7 @@ function hideValidateMessage(input){
 		<div class="controls">
       		<s:textfield id="inputDep" name="department"/>
       		<span>*</span> 
-      		<span class="error">
+      		<span class="error_abet">
       			<s:if test="fieldErrors != null && fieldErrors.get('department') != null && fieldErrors.get('department').size() > 0">
      				<s:property value="fieldErrors.get('department').get(0)"/>
      			</s:if>
