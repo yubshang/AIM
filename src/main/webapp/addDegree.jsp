@@ -19,7 +19,7 @@ $(function(){
 });
 function hideValidateMessage(input){
 	input.keyup(function(event){
-		$(this).siblings('.error').text("");
+		$(this).siblings('.error_abet').text("");
 	});
 }
 </script>
