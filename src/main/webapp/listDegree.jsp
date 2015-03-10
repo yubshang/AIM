@@ -18,12 +18,12 @@
 <body class="center_abet">
 	<h3 class="title_abet"><s:text name="label.listdegree"/></h3>
 	<div class="table_holder_abet">
-		<table data-toggle="table" data-url="json_degree_listDegreeJSON.action">
+		<table data-toggle="table" data-sort-order="desc" data-url="json_degree_listDegreeJSON.action">
     		<thead>
         		<tr>
-            		<th data-field="identifier" class="col-sm-2">Identifier</th>
-            		<th data-field="department" class="col-sm-3">Department</th>
-            		<th data-field="description" class="col-sm-7">Description</th>
+            		<th data-field="identifier" class="col-sm-2" data-sortable="true"><s:text name="label.identifier"/></th>
+            		<th data-field="department" class="col-sm-3" data-sortable="true"><s:text name="label.department"/></th>
+            		<th data-field="description" class="col-sm-7" data-sortable="true"><s:text name="label.description"/></th>
         		</tr>
     		</thead>
 		</table>

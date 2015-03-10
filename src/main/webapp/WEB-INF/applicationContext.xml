@@ -49,6 +49,8 @@
         <property name="annotatedClasses">
             <list>
 	            <value>com.abet.ORM.Degree</value>
+	            <value>com.abet.ORM.Peo</value>
+	            <value>com.abet.ORM.PeoSemesterTarget</value>
             </list>
         </property>
         <property name="hibernateProperties">
@@ -89,9 +91,13 @@
  -->		
     <!-- configure generic database access object class BaseDAOImpl -->    
 	<bean id="degreeDao" class="com.abet.DAO.DegreeDAOImpl"/>
-
+	<bean id="peoDao" class="com.abet.DAO.PeoDAOImpl"/>
+	
 	<bean id="degreeService" class="com.abet.service.impl.DegreeServiceImpl">
 		<property name="dao" ref="degreeDao"/>
+	</bean>
+	<bean id="peoService" class="com.abet.service.impl.PeoServiceImpl">
+		<property name="dao" ref="peoDao"/>
 	</bean>
 	
 	<bean id="degreeAction" class="com.abet.struts.action.DegreeAction" scope="prototype">

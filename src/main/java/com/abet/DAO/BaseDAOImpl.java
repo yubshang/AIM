@@ -13,10 +13,8 @@ import java.lang.reflect.ParameterizedType;
 //import org.springframework.orm.hibernate4.HibernateTemplate;
 //import org.springframework.orm.hibernate4.support.HibernateDaoSupport;
 
-/** generiac database access object */
-public abstract class BaseDAOImpl<T, PK extends java.io.Serializable> implements BaseDAO {
-	
-	// Use @Resource to inject HibernateTemplate instance
+/** generiac data access object */
+public abstract class BaseDAOImpl<T, PK extends java.io.Serializable> implements BaseDAO<T, PK> {
 	@Resource
 	protected SessionFactory sessionFactory;
 	private Class<T> entityClass;
@@ -70,9 +68,12 @@ public abstract class BaseDAOImpl<T, PK extends java.io.Serializable> implements
 		return 0;
 	}
 	
-	@SuppressWarnings({ "rawtypes", "unchecked" })
-	public void delById(Class clazz,Serializable id) {
-//		super.getHibernateTemplate().delete(super.getHibernateTemplate().load(clazz, id));			
+	 public void delete(PK id) {
+		  getCurrentSession().delete(this.load(id));
+	}
+	 
+	 public void deleteObject(T obj) {
+	        getCurrentSession().delete(obj);
 	}
 
 	@SuppressWarnings("unchecked")
@@ -106,18 +107,9 @@ public abstract class BaseDAOImpl<T, PK extends java.io.Serializable> implements
 		return null;
 	}
 	
-	@SuppressWarnings("rawtypes")
-	public Object loadObject(String hql) {
-		final String hql1 = hql;
-		Object obj = null;
-//		List list = super.getHibernateTemplate().executeFind(new HibernateCallback(){
-//			public Object doInHibernate(Session session) throws HibernateException{
-//				Query query = session.createQuery(hql1);
-//				return query.list();
-//			}
-//		});			
-//		if(list.size()>0)obj=list.get(0);	
-		return obj;
+	@SuppressWarnings("unchecked")
+	public T load(PK id) {
+		return (T) getCurrentSession().get(this.entityClass, id);
 	}
 
 	@SuppressWarnings("rawtypes")

@@ -3,12 +3,14 @@ package com.abet.DAO;
 import java.util.*;
 import java.io.Serializable;
 
-public interface BaseDAO {
+public interface BaseDAO<T, PK extends java.io.Serializable>{
 	public Object loadById(Class clazz,Serializable id);
 	
-	public Object loadObject(String hql);
+	public T load(PK id);
 	
-	public void delById(Class clazz,Serializable id);
+	public void delete(PK id);
+	
+	public void deleteObject(T obj);
 	
 	public void saveOrUpdate(Object obj);
 	
