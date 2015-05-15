@@ -12,16 +12,12 @@
 <link rel="stylesheet" type="text/css" href="css/application.css">
 <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
 <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script src="js/application.js" type="text/javascript"></script>
 <script type="text/javascript">
 $(function(){
 	hideValidateMessage($('#inputId'));
 	hideValidateMessage($('#inputDep'));
 });
-function hideValidateMessage(input){
-	input.keyup(function(event){
-		$(this).siblings('.error_abet').text("");
-	});
-}
 </script>
 </head>
 <body>
