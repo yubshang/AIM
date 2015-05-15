@@ -15,13 +15,12 @@ public class DegreeServiceImpl implements DegreeService{
 
 	@SuppressWarnings("unchecked")
 	public List<Degree> allDegree() {
-		List<Degree> degrees = dao.listAll();
-		return degrees;
+		return dao.listAll();
 	}
 
-	public JSONArray allDegreeJ(){
-		return JSONArray.fromObject(this.allDegree());
-	}
+//	public JSONArray allDegreeJ(){
+//		return JSONArray.fromObject(this.allDegree());
+//	}
 	public void delDegree(Integer id) {
 		// TODO Auto-generated method stub
 		

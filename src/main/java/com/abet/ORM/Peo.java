@@ -1,5 +1,6 @@
 package com.abet.ORM;
 
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.Column;
@@ -31,8 +32,8 @@ public class Peo {
 	@Column(name = "description")
 	private String description;
 	
-	@OneToMany(mappedBy = "peo", fetch=FetchType.EAGER)
-	private Set<PeoSemesterTarget> peoSemesterTargets;
+	@OneToMany(mappedBy = "peo", fetch=FetchType.LAZY)
+	private List<PeoSemesterTarget> peoSemesterTargets;
 	
 	public Peo(){
 		
@@ -94,11 +95,11 @@ public class Peo {
 		this.description = description;
 	}
 	
-	public Set<PeoSemesterTarget> getPeoSemesterTargets(){
+	public List<PeoSemesterTarget> getPeoSemesterTargets(){
 		return peoSemesterTargets;
 	}
 	
-	public void setPeoSemesterTargets(Set<PeoSemesterTarget> peoSemesterTargets){
+	public void setPeoSemesterTargets(List<PeoSemesterTarget> peoSemesterTargets){
 		this.peoSemesterTargets = peoSemesterTargets;
 	}
 }

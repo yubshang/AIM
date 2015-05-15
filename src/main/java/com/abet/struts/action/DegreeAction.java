@@ -1,6 +1,5 @@
 package com.abet.struts.action;
 
-import java.util.ArrayList;
 import java.util.List;
 import net.sf.json.JSONArray;
 import com.opensymphony.xwork2.ActionSupport;
@@ -21,7 +20,6 @@ public class DegreeAction extends ActionSupport implements ModelDriven<Degree>{
 	}
 	
 	public String listDegree(){
-//		this.setResultObj(service.allDegreeJ());
 		return SUCCESS;
 	}
 	
