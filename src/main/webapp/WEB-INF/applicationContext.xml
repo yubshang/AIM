@@ -103,4 +103,8 @@
 	<bean id="degreeAction" class="com.abet.struts.action.DegreeAction" scope="prototype">
 		<property name="service" ref="degreeService"/>
 	</bean>
+	
+	<bean id="peoAction" class="com.abet.struts.action.PeoAction" scope="prototype">
+		<property name="service" ref="peoService"/>
+	</bean>
 </beans>
